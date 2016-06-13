@@ -3,26 +3,25 @@ package ec2instances
 type Region string
 
 type Instance struct {
-	Family                   string   `json:"family"`
-	EnhancedNetworking       bool     `json:"enhanced_networking"`
-	VCPU                     int      `json:"vCPU"`
-	Generation               string   `json:"generation"`
-	EbsIOPS                  int      `json:"ebs_iops"`
-	NetworkPerformance       string   `json:"network_performance"`
-	EbsThroughput            int      `json:"ebs_throughput"`
-	PrettyName               string   `json:"pretty_name"`
-	InstanceType             string   `json:"instance_type"`
-	ECU                      float64  `json:"ECU"`
-	Memory                   float64  `json:"memory"`
-	EbsMaxBandwidth          int      `json:"ebs_max_bandwidth"`
-	VPC                      VPC      `json:"vpc"`
-	Arch                     []string `json:"arch"`
-	VPCOnly                  bool     `json:"vpc_only"`
-	LinuxVirtualizationTypes []string `json:"linux_virtualization_types"`
-	EBSOptimized             bool     `json:"ebs_optimized"`
-	Storage                  Storage  `json:"storage"`
-
-	Pricing map[Region]RegionPricing `json:"pricing"`
+	Family                   string                   `json:"family"`
+	InstanceType             string                   `json:"instance_type"`
+	Memory                   float64                  `json:"memory"`
+	EnhancedNetworking       bool                     `json:"enhanced_networking"`
+	VCPU                     int                      `json:"vCPU"`
+	Generation               string                   `json:"generation"`
+	EbsIOPS                  float64                  `json:"ebs_iops"`
+	NetworkPerformance       string                   `json:"network_performance"`
+	EbsThroughput            float64                  `json:"ebs_throughput"`
+	PrettyName               string                   `json:"pretty_name"`
+	ECU                      interface{}              `json:"ECU"`
+	EbsMaxBandwidth          float64                  `json:"ebs_max_bandwidth"`
+	VPC                      VPC                      `json:"vpc"`
+	Arch                     []string                 `json:"arch"`
+	VPCOnly                  bool                     `json:"vpc_only"`
+	LinuxVirtualizationTypes []string                 `json:"linux_virtualization_types"`
+	EBSOptimized             bool                     `json:"ebs_optimized"`
+	Storage                  Storage                  `json:"storage"`
+	Pricing                  map[Region]RegionPricing `json:"pricing"`
 }
 
 type RegionPricing struct {
